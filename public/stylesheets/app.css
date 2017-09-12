@@ -4,14 +4,19 @@ header {
 }
 body {
     background-color: whitesmoke;
+    font-family: 'Raleway', sans-serif;
 }
 main {
     background-color: white;
     padding: 16px;
+    font-family: 'Raleway' , sans-serif;
 }
 .post {
     margin-bottom: 48px;
 }
 .post .user-info img {
     border-radius: 50%
+}
+h1 {font-family: 'Lobster', cursive;
+    font-size: 38px;
 }
