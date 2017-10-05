@@ -1,3 +1,27 @@
+get '/posts/new' do
+    @post = Post.new
+    erb(:"posts/new")
+end
+
+get '/posts/:id' do
+    @post = Post.find(params[:id])  # find the post with the ID from the URL
+    erb(:"posts/show")              # render app/views/posts/show.erb
+end
+
+
+post '/posts' do
+    photo_url = params[:photo_url]
+    
+    @post = Post.new({ photo_url: photo_url, user_id: current_user.id })
+    
+    if @post.save
+        redirect(to('/'))
+    else
+        erb(:"posts/new")
+    end
+end
+
+
 helpers do
     def current_user
         User.find_by(id: session[:user_id])
